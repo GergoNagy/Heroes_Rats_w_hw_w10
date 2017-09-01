@@ -2,6 +2,7 @@ var assert = require('assert');
 var Food = require('../food.js');
 var Heroe = require('../heroe.js');
 var Task = require('../task.js');
+var Rat = require('../rat.js');
 
 describe("Heroe", function(){
 
@@ -13,6 +14,7 @@ describe("Heroe", function(){
     var task1;
     var task1;
     var task1;
+    var rat;
 
     beforeEach(function () {
         heroe = new Heroe("Greg", 50, "chees" )
@@ -23,6 +25,7 @@ describe("Heroe", function(){
         task1 = new Task("Beginner", "easy", false, 1, false);
         task2 = new Task("Find Diablo", "medium", false, 10, false);
         task3 = new Task("Defeet Diablo", "hard", false, 100, false);
+        rat = new Rat()
     })
 
     it("heroe should has name", function(){
@@ -40,6 +43,12 @@ describe("Heroe", function(){
     it("heroe could eat food", function(){
         heroe.eatFood(food1);
         assert.strictEqual(heroe.health, 65);
+    })
+
+    it("heroe eat a poisoned food", function () {
+        rat.touchFood(food1);
+        heroe.eatFood(food1);
+        assert.strictEqual(heroe.health, 40);
     })
 
     it("heroe could eat his fav food", function () {

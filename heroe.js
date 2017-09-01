@@ -1,5 +1,6 @@
 var Food = require('./food.js');
 var Task = require('./task.js');
+var Rat = require('./rat.js');
 
 var Heroe = function(name, health, favFood){
     this.name = name;
@@ -17,12 +18,15 @@ Heroe.prototype = {
         var newHelathLevel = 0;
         var favFoodcounter = food.replenishment * 1.5;
 
-        if(this.favFood == food.name){
+        if (food.poisoned === true ){
+            newHelathLevel = this.health - 10;
+        } else if (this.favFood === food.name){
             newHelathLevel = this.health + favFoodcounter;
         } else {
-        var newHelathLevel =  this.health + food.replenishment;
+            newHelathLevel =  this.health + food.replenishment;
         }
        return this.health = newHelathLevel;
+       
     },
 
     addTask: function(task){
@@ -38,7 +42,7 @@ Heroe.prototype = {
         }
     }
 
-    
+
 }
 
 module.exports = Heroe;
