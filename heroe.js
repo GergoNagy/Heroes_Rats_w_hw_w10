@@ -14,7 +14,14 @@ var Heroe = function(name, health, favFood){
 
 Heroe.prototype = {
     eatFood: function(food){
-       var newHelathLevel =  this.health + food.replenishment;
+        var newHelathLevel = 0;
+        var favFoodcounter = food.replenishment * 1.5;
+
+        if(this.favFood == food.name){
+            newHelathLevel = this.health + favFoodcounter;
+        } else {
+        var newHelathLevel =  this.health + food.replenishment;
+        }
        return this.health = newHelathLevel;
     }
 }
