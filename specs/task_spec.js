@@ -16,4 +16,20 @@ describe("Task", function(){
     it("task has a name", function(){
         assert.strictEqual(task1.name, "Beginner")
     })
+
+    it("task has a leve", function(){
+        assert.strictEqual(task1.difficultyLevel, "easy")
+    })
+
+    it("task has a urg level", function(){
+        assert.strictEqual(task1.urgencyLevel, false)
+    })
+
+    it("task has a reward", function(){
+        assert.strictEqual(task1.reward, 1)
+    })
+
+    it("task has a status", function () {
+        assert.strictEqual(task1.taskStatus, false)
+    })
 })
