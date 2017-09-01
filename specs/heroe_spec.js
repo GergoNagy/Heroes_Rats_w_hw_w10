@@ -22,8 +22,8 @@ describe("Heroe", function(){
         food2 = new Food("chees", 5);
         food3 = new Food("cake", 25);
         food4 = new Food("pizza", 20);
-        task1 = new Task("Beginner", "easy", false, 1, false);
-        task2 = new Task("Find Diablo", "medium", false, 10, false);
+        task1 = new Task("Beginner", "easy", false, 1, true);
+        task2 = new Task("Find Diablo", "medium", true, 10, false);
         task3 = new Task("Defeet Diablo", "hard", false, 100, false);
         rat = new Rat()
     })
@@ -64,6 +64,21 @@ describe("Heroe", function(){
     it("heroe can finish task", function(){
         heroe.addTask(task1);
         heroe.addTask(task2);
-        assert.deepStrictEqual(heroe.completTask(task1), true)
+        assert.deepStrictEqual(heroe.completTask(task2), true)
+    })
+
+    it("sort task by urgency level", function(){
+        heroe.addTask(task1);
+        heroe.addTask(task2);
+        // heroe.completTask(task1)
+        heroe.sortTask("urgencyLevel")
+        assert.deepStrictEqual(heroe.sortedTasks[0].name, "Find Diablo")
+    })
+
+    it("sort task by task status", function () {
+        heroe.addTask(task1);
+        heroe.addTask(task2);
+        heroe.sortTask("taskStatus")
+        assert.deepStrictEqual(heroe.sortedTasks[0].name, "Beginner")
     })
 })

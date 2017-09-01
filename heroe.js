@@ -10,6 +10,7 @@ var Heroe = function(name, health, favFood){
         return "My name is " + this.name;
     }
     this.task = [];
+    this.sortedTasks = [];
 
 }
 
@@ -39,6 +40,16 @@ Heroe.prototype = {
                 element.taskStatus = true;
             }
             return element.taskStatus;
+        }
+    },
+
+    sortTask: function (filter){
+        var sortedTask = this.sortedTasks;
+
+        for (element of this.task){
+            if (element[filter] === true){
+                sortedTask.push(element)
+            }
         }
     }
 
