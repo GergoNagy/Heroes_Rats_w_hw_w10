@@ -23,6 +23,10 @@ Heroe.prototype = {
         var newHelathLevel =  this.health + food.replenishment;
         }
        return this.health = newHelathLevel;
+    },
+
+    addTask: function(task){
+        return this.task.push(task)
     }
 }
 
