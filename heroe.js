@@ -1,3 +1,6 @@
+var Food = require('./food.js');
+var Task = require('./task.js');
+
 var Heroe = function(name, health, favFood){
     this.name = name;
     this.health = health;
@@ -10,7 +13,10 @@ var Heroe = function(name, health, favFood){
 }
 
 Heroe.prototype = {
-    //addblabla: fun (bla){}
+    eatFood: function(food){
+       var newHelathLevel =  this.health + food.replenishment;
+       return this.health = newHelathLevel;
+    }
 }
 
 module.exports = Heroe;

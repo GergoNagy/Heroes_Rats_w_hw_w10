@@ -11,7 +11,7 @@ describe("Heroe", function(){
     var food4;
 
     beforeEach(function () {
-        heroe = new Heroe("Greg", 100, "chees" )
+        heroe = new Heroe("Greg", 50, "chees" )
         food1 = new Food("bread", 15);
         food2 = new Food("chees", 5);
         food3 = new Food("cake", 25);
@@ -23,10 +23,15 @@ describe("Heroe", function(){
     })
 
     it("heroe has health level", function(){
-        assert.strictEqual(heroe.health, 100)
+        assert.strictEqual(heroe.health, 50)
     })
 
     it("heroe should speaks", function(){
         assert.strictEqual(heroe.speak(), "My name is Greg")
+    })
+
+    it("heroe could eat food", function(){
+        heroe.eatFood(food1);
+        assert.strictEqual(heroe.health, 65);
     })
 })
