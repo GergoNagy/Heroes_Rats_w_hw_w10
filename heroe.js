@@ -27,7 +27,18 @@ Heroe.prototype = {
 
     addTask: function(task){
         return this.task.push(task)
+    },
+
+    completTask: function(task){
+         for (element of this.task){
+            if ( task.name === element.name){
+                element.taskStatus = true;
+            }
+            return element.taskStatus;
+        }
     }
+
+    
 }
 
 module.exports = Heroe;

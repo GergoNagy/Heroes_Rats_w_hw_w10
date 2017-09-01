@@ -51,4 +51,10 @@ describe("Heroe", function(){
         heroe.addTask(task1);
         assert.strictEqual(heroe.task.length, 1)
     })
+
+    it("heroe can finish task", function(){
+        heroe.addTask(task1);
+        heroe.addTask(task2);
+        assert.deepStrictEqual(heroe.completTask(task1), true)
+    })
 })
