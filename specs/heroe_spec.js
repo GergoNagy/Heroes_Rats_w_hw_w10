@@ -21,4 +21,12 @@ describe("Heroe", function(){
     it("heroe should has name", function(){
         assert.strictEqual(heroe.name, "Greg")
     })
+
+    it("heroe has health level", function(){
+        assert.strictEqual(heroe.health, 100)
+    })
+
+    it("heroe should speaks", function(){
+        assert.strictEqual(heroe.speak(), "My name is Greg")
+    })
 })
