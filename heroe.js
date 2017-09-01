@@ -9,4 +9,8 @@ var Heroe = function(name, health, favFood){
 
 }
 
+Heroe.prototype = {
+    //addblabla: fun (bla){}
+}
+
 module.exports = Heroe;
