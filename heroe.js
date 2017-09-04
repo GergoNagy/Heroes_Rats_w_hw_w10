@@ -44,11 +44,9 @@ Heroe.prototype = {
     },
 
     sortTask: function (filter){
-        var sortedTask = this.sortedTasks;
-
         for (element of this.task){
             if (element[filter] === true){
-                sortedTask.push(element)
+                this.sortedTasks.push(element)
             }
         }
     }
